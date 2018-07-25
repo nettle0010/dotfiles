@@ -4,3 +4,8 @@ set number
 set cursorline
 " 選択している列を強調する
 set cursorcolumn
+" EscキーでIMEをOFFにする
+function! ImInActivate()
+  call system('fcitx-remote -c')
+endfunction
+inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
